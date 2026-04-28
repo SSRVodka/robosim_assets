@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="g1_dual_arm">
+  <group name="left_arm">
+    <joint name="left_shoulder_pitch_joint"/>
+    <joint name="left_shoulder_roll_joint"/>
+    <joint name="left_shoulder_yaw_joint"/>
+    <joint name="left_elbow_joint"/>
+    <joint name="left_wrist_roll_joint"/>
+    <joint name="left_wrist_pitch_joint"/>
+    <joint name="left_wrist_yaw_joint"/>
+  </group>
+  <group name="right_arm">
+    <joint name="right_shoulder_pitch_joint"/>
+    <joint name="right_shoulder_roll_joint"/>
+    <joint name="right_shoulder_yaw_joint"/>
+    <joint name="right_elbow_joint"/>
+    <joint name="right_wrist_roll_joint"/>
+    <joint name="right_wrist_pitch_joint"/>
+    <joint name="right_wrist_yaw_joint"/>
+  </group>
+  <group name="both_arms">
+    <group name="left_arm"/>
+    <group name="right_arm"/>
+  </group>
+
+  <group_state group="left_arm" name="ready">
+    <joint name="left_shoulder_pitch_joint" value="0"/>
+    <joint name="left_shoulder_roll_joint" value="0"/>
+    <joint name="left_shoulder_yaw_joint" value="0"/>
+    <joint name="left_elbow_joint" value="0"/>
+    <joint name="left_wrist_roll_joint" value="0"/>
+    <joint name="left_wrist_pitch_joint" value="0"/>
+    <joint name="left_wrist_yaw_joint" value="0"/>
+  </group_state>
+  <group_state group="right_arm" name="ready">
+    <joint name="right_shoulder_pitch_joint" value="0"/>
+    <joint name="right_shoulder_roll_joint" value="0"/>
+    <joint name="right_shoulder_yaw_joint" value="0"/>
+    <joint name="right_elbow_joint" value="0"/>
+    <joint name="right_wrist_roll_joint" value="0"/>
+    <joint name="right_wrist_pitch_joint" value="0"/>
+    <joint name="right_wrist_yaw_joint" value="0"/>
+  </group_state>
+
+  <end_effector name="left_wrist_yaw_link" group="left_arm" parent_group="left_arm" parent_link="left_shoulder_pitch_link"/>
+  <end_effector name="right_wrist_yaw_link" group="right_arm" parent_group="right_arm" parent_link="right_shoulder_pitch_link"/>
+</robot>
