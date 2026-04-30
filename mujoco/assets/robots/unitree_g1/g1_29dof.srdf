@@ -16,6 +16,10 @@
     <joint name="right_ankle_pitch_joint"/>
     <joint name="right_ankle_roll_joint"/>
   </group>
+  <group name="both_legs">
+    <group name="left_leg"/>
+    <group name="right_leg"/>
+  </group>
   <group name="waist">
     <joint name="waist_yaw_joint"/>
     <joint name="waist_roll_joint"/>
@@ -49,8 +53,7 @@
     <group name="right_arm"/>
   </group>
   <group name="all">
-    <group name="left_leg"/>
-    <group name="right_leg"/>
+    <group name="both_legs"/>
     <group name="upper_body"/>
   </group>
 
@@ -78,6 +81,8 @@
     <joint name="waist_pitch_joint" value="0"/>
   </group_state>
 
+  <end_effector name="left_ankle_roll_link" group="left_leg" parent_group="left_leg" parent_link="left_hip_pitch_link"/>
+  <end_effector name="right_ankle_roll_link" group="right_leg" parent_group="right_leg" parent_link="right_hip_pitch_link"/>
   <end_effector name="left_wrist_yaw_link" group="left_arm" parent_group="left_arm" parent_link="left_shoulder_pitch_link"/>
   <end_effector name="right_wrist_yaw_link" group="right_arm" parent_group="right_arm" parent_link="right_shoulder_pitch_link"/>
 </robot>
