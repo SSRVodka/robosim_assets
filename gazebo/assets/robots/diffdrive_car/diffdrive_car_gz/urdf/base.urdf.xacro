@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+   <xacro:include filename="$(find diffdrive_car_gz)/urdf/common_inertia.xacro" />
+    <xacro:macro name="base_xacro" params="length radius">
+
+    <!-- 虚拟部件：让轮胎落地 -->
+     <link name="base_footprint" />
+
+        <!-- 虚拟部件与主体紧耦合 -->
+        <joint name="base_joint" type="fixed">
+            <parent link="base_footprint" />
+            <child link="base_link" />
+            <!-- 轮子半径 0.032，另外 0.001 确保紧贴 -->
+            <origin xyz="0.0 0.0 ${length/2.0+0.032-0.001}" rpy="0 0 0" />
+        </joint>
+
+        <link name="base_link">
+            <visual>
+                <origin xyz="0 0 0.0" rpy="0 0 0" />
+                <geometry>
+                    <cylinder length="${length}" radius="${length}" />
+                </geometry>
+                <material name="blue">
+                    <color rgba="0.1 0.1 1.0 0.5"/>
+                </material>
+            </visual>
+
+            <!-- 碰撞属性 -->
+            <collision>
+                <origin xyz="0 0 0.0" rpy="0 0 0" />
+                <geometry>
+                    <cylinder length="${length}" radius="${length}" />
+                </geometry>
+                <material name="red">
+                    <color rgba="1.0 0.1 0.1 0.5"/>
+                </material>
+            </collision>
+            <xacro:cylinder_inertia m="1.0" r="${radius}" h="${length}"/>
+        </link>
+
+    </xacro:macro>
+
+</robot>

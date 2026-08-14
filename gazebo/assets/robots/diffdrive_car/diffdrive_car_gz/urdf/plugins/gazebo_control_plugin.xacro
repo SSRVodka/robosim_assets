@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="gazebo_control_plugin">
+        <gazebo>
+            <plugin name='gz::sim::systems::DiffDrive' filename='gz-sim-diff-drive-system'>
+                <!-- diff_drive 的控制方法: /cmd_vel -> /diff_drive -> {/tf, /odom} -->
+                <!-- 注意！这里的 topic 是 Gazebo 的 topic，与 ROS2 topic 不同！ -->
+                <!-- 前者通过 gz topic -l 查询，后者通过 ros2 topic list 查询。 -->
+                <!-- 需要使用 ros_gz_bridge 建立映射。老版本可以使用 <ros><remapping> 直接进行，
+                    但新版本需要手动在 launch 文件中启动 ros_gz_bridge -->
+                <!-- @ref https://ibrahimmansur4.medium.com/creating-a-custom-differential-drive-robot-in-gazebo-sim-af939cd8bb97 -->
+                <topic>/cmd_vel</topic>
+                <odom_topic>/odom</odom_topic>
+                <tf_topic>/tf</tf_topic>
+                <odom_publish_frequency>50</odom_publish_frequency>
+                <!-- wheels -->
+                <!-- 关联的名称参见 wheel.urdf.xacro 中的 joint 定义 -->
+                <left_joint>left_wheel_joint</left_joint>
+                <right_joint>right_wheel_joint</right_joint>
+                <!-- 下面是给 diff_drive 插件传入的物理参数 -->
+                <!-- kinematics -->
+                <wheel_separation>0.2</wheel_separation>
+                <wheel_radius>0.032</wheel_radius>
+                <!-- limits -->
+                <max_wheel_torque>20</max_wheel_torque>
+                <max_linear_acceleration>1</max_linear_acceleration>
+                <!-- <min_linear_acceleration>-1</min_linear_acceleration>
+                <max_angular_acceleration>2</max_angular_acceleration>
+                <min_angular_acceleration>-2</min_angular_acceleration> -->
+                <!-- <max_linear_velocity>0.5</max_linear_velocity>
+                <max_angular_velocity>1</max_angular_velocity> -->
+                <!-- 定义 base_footprint 的父坐标系为 odom (odometry_frame 的 id) -->
+                <frame_id>odom</frame_id>
+                <child_frame_id>base_footprint</child_frame_id>
+            </plugin>
+            <!-- 和旧版不同，需要单独声明 joint-state publisher 然后声明 update rate -->
+            <!-- 旧版的 update rate 和 <publish_wheel_tf> 是直接放在了 diff_drive 插件里了 -->
+            <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
+                <update_rate>50</update_rate>
+                <topic>joint_states</topic>
+                <joint_name>left_wheel_joint</joint_name>
+                <joint_name>right_wheel_joint</joint_name>
+            </plugin>
+        </gazebo>
+   </xacro:macro>
+</robot>

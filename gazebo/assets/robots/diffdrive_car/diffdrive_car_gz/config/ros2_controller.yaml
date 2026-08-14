@@ -1,0 +1,57 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz
+    use_sim_time: true
+    # 注意，以下控制器需要启动时主动显式加载 & 激活 ros2 control load_controller <name> --set-state active
+    vbot_joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+      use_sim_time: true
+    # 力控 控制器
+    vbot_effort_controller:
+      type: effort_controllers/JointGroupEffortController
+    # 注意：力控和两轮差速控制器不建议同时激活（但可以同时加载）
+    # 力控只建议在精细操作时使用，这里下面的参数填的是轮子，仅作示例使用
+    vbot_diff_drive_controller:
+      type: diff_drive_controller/DiffDriveController
+
+vbot_effort_controller:
+  ros__parameters:
+    joints:
+      - left_wheel_joint
+      - right_wheel_joint
+    command_interfaces:
+      - effort
+    state_interfaces:
+      - position
+      - velocity
+      - effort
+
+vbot_diff_drive_controller:
+  ros__parameters:
+    # 使用接口 ~/cmd_vel_unstamped [geometry_msgs::msg::Twist]
+    use_stamped_vel: false
+
+    left_wheel_names: ["left_wheel_joint"]
+    right_wheel_names: ["right_wheel_joint"]
+
+    wheel_separation: 0.20
+    #wheels_per_side: 1  # actually 2, but both are controlled by 1 signal
+    wheel_radius: 0.032
+
+    wheel_separation_multiplier: 1.0
+    left_wheel_radius_multiplier: 1.0
+    right_wheel_radius_multiplier: 1.0
+
+    publish_rate: 50.0
+    odom_frame_id: odom
+    base_frame_id: base_footprint
+    pose_covariance_diagonal : [0.001, 0.001, 0.0, 0.0, 0.0, 0.01]
+    twist_covariance_diagonal: [0.001, 0.0, 0.0, 0.0, 0.0, 0.01]
+
+    # 只要里程计（odometry）是准的，开环也无所谓
+    open_loop: true
+    enable_odom_tf: true
+
+    cmd_vel_timeout: 0.5
+    #publish_limited_velocity: true
+    #velocity_rolling_window_size: 10

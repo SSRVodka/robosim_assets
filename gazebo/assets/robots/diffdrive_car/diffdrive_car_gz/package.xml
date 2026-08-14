@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>diffdrive_car_gz</name>
+  <version>0.0.0</version>
+  <description>Diff-drive robot for Gazebo Sim.</description>
+  <maintainer email="root@todo.todo">root</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <exec_depend>ros_gz_bridge</exec_depend>
+  <exec_depend>ros_gz_image</exec_depend>
+  <exec_depend>ros_gz_sim</exec_depend>
+  <exec_depend>twist_stamper</exec_depend>
+  <exec_depend>xacro</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
