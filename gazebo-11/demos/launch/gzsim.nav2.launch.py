@@ -22,10 +22,8 @@ DEFAULT_ROBOT_NAME = "diffdrive_car"
 DEFAULT_ROBOT_SIM_LAUNCH_SCRIPT = "gzsim.classic.launch.py"
 DEFAULT_ROBOT_NAV2_CONFIG = "nav2_params.classic.yaml"
 
-# DEFAULT_ASSET_GZ_WORLD = "standard_room.classic.world"
-# DEFAULT_ASSET_SLAM2D_MAP = "standard_map.yaml"
-DEFAULT_ASSET_GZ_WORLD = "aws_house.world"
-DEFAULT_ASSET_SLAM2D_MAP = "aws_house.yaml"
+DEFAULT_ASSET_GZ_WORLD = "standard_room.classic.world"
+DEFAULT_ASSET_SLAM2D_MAP = "standard_map.yaml"
 # DEFAULT_ASSET_GZ_WORLD = "aws_no_roof_small_warehouse.world"
 # DEFAULT_ASSET_SLAM2D_MAP = "005/map.yaml"
 
@@ -39,6 +37,7 @@ def launch_setup(context: launch.LaunchContext, *args, **kwargs):
     nav2_params = context.perform_substitution(LaunchConfiguration("nav2_params"))
     world = context.perform_substitution(LaunchConfiguration("world"))
     slam2d_map = context.perform_substitution(LaunchConfiguration("map"))
+    gui = context.perform_substitution(LaunchConfiguration("gui"))
 
     if not config.is_robot_navigable(robot_name):
         raise RuntimeError(
@@ -59,7 +58,10 @@ def launch_setup(context: launch.LaunchContext, *args, **kwargs):
         PythonLaunchDescriptionSource(
             os.path.join(robot_desc_share_dir, "launch", robot_sim_launch_script)
         ),
-        launch_arguments={"world": os.path.join(config.ASSET_GZ_WORLDS_DIR, world)}.items(),
+        launch_arguments={
+            "world": os.path.join(config.ASSET_GZ_WORLDS_DIR, world),
+            "gui": gui,
+        }.items(),
     )
     action_nav2_and_rviz2_launch = launch.actions.IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -136,6 +138,9 @@ def generate_launch_description() -> launch.LaunchDescription:
                 "map",
                 default_value=DEFAULT_ASSET_SLAM2D_MAP,
                 description="The custom SLAM 2D map for navigation2 & simulation env (like gazebo)",
+            ),
+            DeclareLaunchArgument(
+                "gui", default_value="true", description="Start the Gazebo Classic GUI"
             ),
             OpaqueFunction(function=launch_setup),
         ]

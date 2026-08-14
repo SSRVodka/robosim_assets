@@ -1,13 +1,13 @@
 import os
+
 import launch
 import launch.event_handlers
 import launch.launch_description_sources
 import launch_ros
 import launch_ros.parameter_descriptions
 from ament_index_python.packages import get_package_share_directory
-
+from launch.substitutions import LaunchConfiguration
 from robot_sim_common import config
-
 
 PKG_NAME = 'diffdrive_car_desc'
 URDF_FILENAME = "robot.urdf.classic.xacro"
@@ -26,8 +26,10 @@ def generate_launch_description():
         "world", default_value=world_path, description="world model path")
     
     cmd_result = launch.substitutions.Command(
-        ['xacro ', launch.substitutions.LaunchConfiguration("robot_model")])
-    robot_desc_text_param_val = launch_ros.parameter_descriptions.ParameterValue(cmd_result, value_type=str)
+        ['xacro ', LaunchConfiguration("robot_model")])
+    robot_desc_text_param_val = launch_ros.parameter_descriptions.ParameterValue(
+        cmd_result, value_type=str
+    )
 
     # Robot state node
     action_robot_desc_pub_node = launch_ros.actions.Node(
@@ -50,16 +52,13 @@ def generate_launch_description():
     action_set_gz_env = launch.actions.AppendEnvironmentVariable(
         'LD_LIBRARY_PATH', "/usr/lib/x86_64-linux-gnu/gazebo-11/plugins"
     )
-    action_set_gz_env2 = launch.actions.AppendEnvironmentVariable(
-        'GAZEBO_MODEL_PATH', config.ASSET_GZ_COMMON_MODELS_DIR
-    )
-
     action_launch_gazebo_classic = launch.actions.IncludeLaunchDescription(
         launch.launch_description_sources.PythonLaunchDescriptionSource([
             os.path.join(get_package_share_directory('gazebo_ros'), 'launch', 'gazebo.launch.py')
         ]),
         launch_arguments=[
-            ('world', launch.substitutions.LaunchConfiguration("world")),
+            ('world', LaunchConfiguration("world")),
+            ('gui', LaunchConfiguration("gui", default="true")),
             ('verbose','true'),
             ('initial_sim_time', '0')
         ]
@@ -71,13 +70,13 @@ def generate_launch_description():
         executable='spawn_entity.py',
         arguments=[
             '-topic', '/robot_description',
-            '-entity', 'voxelsky_robot',
+            '-entity', 'diffdrive_car',
         ]
     )
 
     ################ Gazebo Classic Start Fin ###############
 
-    ################# Loading ros2_control Controllers (ONLY without gazebo control plugin) #################
+    ################# Loading ros2_control controllers #################
 
     action_load_joint_state_broadcaster = launch.actions.ExecuteProcess(
         cmd=['ros2', 'control', 'load_controller', '--set-state', 'active',
@@ -99,7 +98,6 @@ def generate_launch_description():
     
     return launch.LaunchDescription([
         action_set_gz_env,
-        action_set_gz_env2,
         arg_declare_handle,
         arg_declare_world,
         action_robot_desc_pub_node,

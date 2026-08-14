@@ -1,0 +1,8 @@
+# ROS 2 / colcon workspace artifacts
+**/build/
+**/install/
+**/log/
+
+# Python bytecode
+__pycache__/
+*.py[cod]

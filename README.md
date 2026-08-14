@@ -5,7 +5,7 @@
 
 现在支持的机器人：
 
-- `gazebo/assets/robots/diffdrive_car`
+- `gazebo-11/assets/robots/diffdrive_car`
 - `mujoco/assets/robots/franka_panda`
 - `mujoco/assets/robots/robot_vacuum`
 - `mujoco/assets/robots/vx300s_cohesive`
@@ -13,8 +13,8 @@
 
 现在支持的场景：
 
-- `gazebo/assets/worlds/sdf/aws_house.world`
-- `gazebo/assets/worlds/sdf/standard_room.world`
+- `gazebo-11/assets/worlds/sdf/aws_house.world`
+- `gazebo-11/assets/worlds/sdf/standard_room.classic.world`
 - `mujoco/assets/worlds/bedroom`
 - `mujoco/assets/worlds/cafe`
 - `mujoco/assets/worlds/oldroom`
@@ -41,4 +41,3 @@
 > 
 > 您也可以借助 ROS2 Moveit2 官方提供的 wizard（`ros2 run moveit_setup_assistant moveit_set
 up_assistant`），导入您的机器人模型，一步步地生成，拿到其中的 `*.srdf` 即可；
-

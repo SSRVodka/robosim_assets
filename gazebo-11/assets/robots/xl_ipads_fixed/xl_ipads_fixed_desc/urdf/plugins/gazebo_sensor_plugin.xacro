@@ -113,7 +113,7 @@
                 <enable_metrics>true</enable_metrics>
                 <update_rate>20</update_rate>
                 <!-- Gazebo topic for RGBD stream -->
-                <!-- Use ros_gz_image:image_bridge to publish to ROS. NOTE the corresponding gz_ros_bridge (on track) -->
+                <!-- Publish the Classic camera image through the Gazebo ROS plugin. -->
                 <!-- Gazebo topics: /camera(${topic})/{camera_info,depth_image,image,points} -->
                 <topic>camera</topic>
                 <gz_frame_id>camera_optical_link</gz_frame_id>

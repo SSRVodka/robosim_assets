@@ -8,15 +8,7 @@
   <license>Apache-2.0</license>
 
   <depend>geometry_msgs</depend>
-  <depend>nav_msgs</depend>
-  <depend>rclcpp</depend>
-  <depend>ros_gz_bridge</depend>
-  <depend>ros_gz_image</depend>
-  <depend>ros_gz_sim</depend>
   <depend>sensor_msgs</depend>
-  <depend>tf2</depend>
-
-  <depend>robot_sim_common</depend>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 

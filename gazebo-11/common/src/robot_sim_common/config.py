@@ -11,9 +11,6 @@ POSE_MGR_SVC = "/pose_manager/get_pose"
 ASSET_MAPS_PKG_SHARED_DIR = get_package_share_directory("asset_maps")
 ASSET_SLAM2D_MAPS_DIR = os.path.join(ASSET_MAPS_PKG_SHARED_DIR, "slam2d")
 
-ASSET_COMMON_MODELS_PKG_SHARED_DIR = get_package_share_directory("asset_models")
-ASSET_GZ_COMMON_MODELS_DIR = os.path.join(ASSET_COMMON_MODELS_PKG_SHARED_DIR, "sdf")
-
 ASSET_WORLDS_PKG_SHARED_DIR = get_package_share_directory("asset_worlds")
 ASSET_GZ_WORLDS_DIR = os.path.join(ASSET_WORLDS_PKG_SHARED_DIR, "sdf")
 
