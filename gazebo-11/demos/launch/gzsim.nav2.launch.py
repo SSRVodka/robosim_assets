@@ -72,6 +72,7 @@ def launch_setup(context: launch.LaunchContext, *args, **kwargs):
         launch_arguments={
             "map": os.path.join(config.ASSET_SLAM2D_MAPS_DIR, slam2d_map),
             "params_file": os.path.join(robot_nav2_share_dir, "config", nav2_params),
+            "rviz": gui,
         }.items(),
     )
 
@@ -98,6 +99,7 @@ def launch_setup(context: launch.LaunchContext, *args, **kwargs):
                 executable="pose_initialization",
                 name="initial_pose_publisher",
                 arguments=[],
+                parameters=[{"use_sim_time": True}],
                 output="screen",
             )
         ],

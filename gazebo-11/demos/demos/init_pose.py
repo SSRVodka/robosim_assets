@@ -5,13 +5,13 @@ from rclpy.node import Node
 
 
 class InitialPosePublisher(Node):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__('initial_pose_publisher')
         self.pub = self.create_publisher(PoseWithCovarianceStamped, '/initialpose', 10)
         self.timer = self.create_timer(1.0, self.publish_once)
         self.published = False
 
-    def publish_once(self):
+    def publish_once(self) -> None:
         if self.published:
             return
 
@@ -35,10 +35,11 @@ class InitialPosePublisher(Node):
         self.published = True
         self.destroy_timer(self.timer)
 
-def main():
+def main() -> None:
     rclpy.init()
     node = InitialPosePublisher()
-    rclpy.spin_once(node, timeout_sec=2.0)
+    while rclpy.ok() and not node.published:
+        rclpy.spin_once(node, timeout_sec=1.0)
     node.destroy_node()
     rclpy.shutdown()
 
