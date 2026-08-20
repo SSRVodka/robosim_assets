@@ -51,10 +51,6 @@ def generate_launch_description():
     action_set_gz_env = launch.actions.AppendEnvironmentVariable(
         'LD_LIBRARY_PATH', "/usr/lib/x86_64-linux-gnu/gazebo-11/plugins"
     )
-    action_set_gz_env2 = launch.actions.AppendEnvironmentVariable(
-        'GAZEBO_MODEL_PATH', config.ASSET_GZ_COMMON_MODELS_DIR
-    )
-
     action_launch_gazebo_classic = launch.actions.IncludeLaunchDescription(
         launch.launch_description_sources.PythonLaunchDescriptionSource([
             os.path.join(get_package_share_directory('gazebo_ros'), 'launch', 'gazebo.launch.py')
@@ -100,7 +96,6 @@ def generate_launch_description():
     
     return launch.LaunchDescription([
         action_set_gz_env,
-        action_set_gz_env2,
         arg_declare_handle,
         arg_declare_world,
         action_robot_desc_pub_node,
@@ -121,4 +116,3 @@ def generate_launch_description():
             )
         ),
     ])
-
