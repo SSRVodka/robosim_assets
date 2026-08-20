@@ -1,0 +1,14 @@
+{
+  "schema_version": "robosim.robot-asset/1",
+  "robot_id": "ipads_desc",
+  "gazebo": {
+    "urdf": "ipads_description/urdf/ipads_desc.urdf",
+    "srdf": "ipads_moveit_config/config/ipads_desc.srdf",
+    "closure_roots": ["ipads_description", "ipads_moveit_config"],
+    "package_aliases": {"ipads_desc": "ipads_description"},
+    "position_controllers": [
+      {"group": "left_arm_group", "controller": "left_arm_group_controller"},
+      {"group": "right_arm_group", "controller": "right_arm_group_controller"}
+    ]
+  }
+}

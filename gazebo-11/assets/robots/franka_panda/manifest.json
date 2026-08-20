@@ -1,0 +1,14 @@
+{
+  "schema_version": "robosim.robot-asset/1",
+  "robot_id": "franka_panda",
+  "gazebo": {
+    "urdf": "panda_description/urdf/panda.urdf",
+    "srdf": "panda_moveit_config/config/panda.srdf",
+    "closure_roots": ["panda_description", "panda_moveit_config"],
+    "package_aliases": {"franka_panda_desc": "panda_description"},
+    "position_controllers": [
+      {"group": "panda_arm", "controller": "panda_arm_controller"},
+      {"group": "hand", "controller": "hand_controller"}
+    ]
+  }
+}
