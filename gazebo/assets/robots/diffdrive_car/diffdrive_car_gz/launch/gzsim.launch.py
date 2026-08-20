@@ -73,7 +73,7 @@ def generate_launch_description() -> launch.LaunchDescription:
         executable='create',
         arguments=[
             '-topic', 'robot_description',
-            '-name', 'voxelsky_robot',
+            '-name', 'diffdrive_car',
             # '-allow_renaming', 'true',
             # '-x', "0.0",
             # '-y', "0.0",
