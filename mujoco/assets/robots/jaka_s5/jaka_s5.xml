@@ -1,0 +1,269 @@
+<mujoco model="jaka_s5">
+  <compiler angle="radian" autolimits="true" />
+  <option timestep="0.002" integrator="implicitfast" impratio="10" gravity="0 0 -9.81" />
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" />
+    </default>
+    <default class="collision">
+      <geom type="mesh" group="3" />
+    </default>
+  </default>
+  <asset>
+    <mesh name="Link_00" content_type="model/stl" file="assets/jaka_s5/meshes/jaka_s5_meshes/Link_00.STL" />
+    <mesh name="Link_01" content_type="model/stl" file="assets/jaka_s5/meshes/jaka_s5_meshes/Link_01.STL" />
+    <mesh name="Link_02" content_type="model/stl" file="assets/jaka_s5/meshes/jaka_s5_meshes/Link_02.STL" />
+    <mesh name="Link_03" content_type="model/stl" file="assets/jaka_s5/meshes/jaka_s5_meshes/Link_03.STL" />
+    <mesh name="Link_04" content_type="model/stl" file="assets/jaka_s5/meshes/jaka_s5_meshes/Link_04.STL" />
+    <mesh name="Link_05" content_type="model/stl" file="assets/jaka_s5/meshes/jaka_s5_meshes/Link_05.STL" />
+    <mesh name="Link_06" content_type="model/stl" file="assets/jaka_s5/meshes/jaka_s5_meshes/Link_06.STL" />
+    <mesh name="part_001_surface_shell_001" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_001_surface_shell_001.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_002_surface_shell_002" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_002_surface_shell_002.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_003_surface_shell_003" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_003_surface_shell_003.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_004_surface_shell_004" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_004_surface_shell_004.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_005_surface_shell_005" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_005_surface_shell_005.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_006_surface_shell_006" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_006_surface_shell_006.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_007_surface_shell_007" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_007_surface_shell_007.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_008_surface_shell_008" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_008_surface_shell_008.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_009_surface_shell_009" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_009_surface_shell_009.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_010_surface_shell_010" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_010_surface_shell_010.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_011_surface_shell_011" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_011_surface_shell_011.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_012_surface_shell_012" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_012_surface_shell_012.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_013_surface_shell_013" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_013_surface_shell_013.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_014_surface_shell_014" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_014_surface_shell_014.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_015_surface_shell_015" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_015_surface_shell_015.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_016_surface_shell_016" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_016_surface_shell_016.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_017_surface_shell_017" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_017_surface_shell_017.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_018_surface_shell_018" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_018_surface_shell_018.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_019_surface_shell_019" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_019_surface_shell_019.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_020_surface_shell_020" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_020_surface_shell_020.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_021_surface_shell_021" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_021_surface_shell_021.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_022_surface_shell_022" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_022_surface_shell_022.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_023_surface_shell_023" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_023_surface_shell_023.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_024_surface_shell_024" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_024_surface_shell_024.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_025_surface_shell_025" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_025_surface_shell_025.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_026_surface_shell_026" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_026_surface_shell_026.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_027_surface_shell_027" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_027_surface_shell_027.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_028_surface_shell_028" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_028_surface_shell_028.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_029_surface_shell_029" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_029_surface_shell_029.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_037_solid_037" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_037_solid_037.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_036_solid_036" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_036_solid_036.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_039_solid_039" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_039_solid_039.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_038_solid_038" content_type="model/stl" file="assets/pgia140_gripper/meshes/part_038_solid_038.stl" scale="0.001 0.001 0.001" />
+    <mesh name="base_link" content_type="model/stl" file="assets/gemini336l/meshes/gemini335L_336L/base_link.STL" />
+    <mesh name="camera_color_screw_frame" content_type="model/stl" file="assets/gemini336l/meshes/gemini335L_336L/camera_color_screw_frame.STL" />
+    <mesh name="camera_depth_frame" content_type="model/stl" file="assets/gemini336l/meshes/gemini335L_336L/camera_depth_frame.STL" />
+    <mesh name="camera_infra2_frame" content_type="model/stl" file="assets/gemini336l/meshes/gemini335L_336L/camera_infra2_frame.STL" />
+  </asset>
+  <custom>
+    <numeric name="robosim_normalized_position_finger_tip1_joint" size="1" data="1" />
+  </custom>
+  <worldbody>
+    <light name="robot_tracking_light" pos="0 0 2" mode="trackcom" />
+    <body name="Link_00">
+      <inertial pos="0.0028167 -0.00019454 0.019544" quat="0.000246397 0.708597 0.000104549 0.705613" mass="0.52663" diaginertia="0.00145141 0.00095727 0.000629685" />
+      <geom rgba="0.79216 0.81961 0.93333 1" mesh="Link_00" class="visual" />
+      <geom mesh="Link_00" class="collision" />
+      <body name="Link_01" pos="0 -0.00022535 0.12015" quat="0 0 0 -1">
+        <inertial pos="-2.5186e-07 0.0033226 -0.001509" quat="1 0.00056994 2.2456e-05 6.30952e-05" mass="15.135" diaginertia="0.044302 0.043091 0.030523" />
+        <joint name="joint_1" pos="0 0 0" axis="0 0 1" range="-6.28 6.28" actuatorfrcrange="-2000 2000" damping="98" armature="0.1" />
+        <geom rgba="0.84706 0.84706 0.84706 1" mesh="Link_01" class="visual" />
+        <geom mesh="Link_01" class="collision" />
+        <body name="Link_02" quat="0.707105 0.707108 0 0">
+          <inertial pos="0.215 6.4325e-09 -0.14315" quat="0.5 0.5 0.5 0.5" mass="45.847" diaginertia="1.5964 1.5689 0.10377" />
+          <joint name="joint_2" pos="0 0 0" axis="0 0 1" range="-1.48 4.62" actuatorfrcrange="-5000 5000" damping="95" armature="0.1" />
+          <geom rgba="0.84706 0.84706 0.84706 1" mesh="Link_02" class="visual" />
+          <geom mesh="Link_02" class="collision" />
+          <body name="Link_03" pos="0.43 0 0">
+            <inertial pos="0.19077 -1.059e-08 -0.010626" quat="0.514149 0.485433 0.485414 0.514178" mass="18.05" diaginertia="0.41563 0.41137 0.0207004" />
+            <joint name="joint_3" pos="0 0 0" axis="0 0 1" range="-3.05 3.05" actuatorfrcrange="-5000 5000" damping="19" armature="0.1" />
+            <geom rgba="0.84706 0.84706 0.84706 1" mesh="Link_03" class="visual" />
+            <geom mesh="Link_03" class="collision" />
+            <body name="Link_04" pos="0.3685 0 -0.114">
+              <inertial pos="-2.1463e-06 -0.0059512 0.0026789" quat="0.698882 0.715237 3.07003e-05 -9.58114e-06" mass="5.5377" diaginertia="0.0092004 0.00891448 0.00520632" />
+              <joint name="joint_4" pos="0 0 0" axis="0 0 1" range="-1.48 4.62" actuatorfrcrange="-2000 2000" damping="5" armature="0.1" />
+              <geom rgba="0.84706 0.84706 0.84706 1" mesh="Link_04" class="visual" />
+              <geom mesh="Link_04" class="collision" />
+              <body name="Link_05" pos="0 -0.1135 0" quat="0.707105 0.707108 0 0">
+                <inertial pos="-2.0304e-06 -0.0028889 -0.0023424" quat="0.709446 0.70476 -1.15346e-05 9.23912e-07" mass="6.3339" diaginertia="0.012993 0.0127003 0.0058451" />
+                <joint name="joint_5" pos="0 0 0" axis="0 0 1" range="-6.28 6.28" actuatorfrcrange="-3000 3000" damping="5" armature="0.1" />
+                <geom rgba="0.84706 0.84706 0.84706 1" mesh="Link_05" class="visual" />
+                <geom mesh="Link_05" class="collision" />
+                <body name="Link_06" pos="0.00026137 0.1175 0.00025782" quat="0.269353847934 -0.269354990708 -0.653796308222 -0.653793534404">
+                  <inertial pos="-0.00024331 0.00030548 -0.026411" quat="-0.0442214 0.705062 0.0482732 0.706117" mass="0.23261" diaginertia="0.000186062 0.000135417 0.000134891" />
+                  <joint name="joint_6" pos="0 0 0" axis="0 0 1" range="-6.28 6.28" actuatorfrcrange="-1000 1000" damping="5" armature="0.1" />
+                  <geom rgba="0.79216 0.81961 0.93333 1" mesh="Link_06" class="visual" />
+                  <geom mesh="Link_06" class="collision" />
+                  <body name="gripper_base" pos="0 0 -0.039575" quat="0.707107 0.707107 0 0">
+                    <inertial pos="-0.00554898 0.0878823 2.94053e-05" quat="0.00711764 0.70704 -0.00997486 0.707068" mass="0.489372" diaginertia="0.000603754 0.00052036 0.00036306" />
+                    <geom pos="0.0318051 0.07375 0.00435784" quat="1 0 0 0" mesh="part_001_surface_shell_001" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" quat="1 0 0 0" mesh="part_002_surface_shell_002" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_003_surface_shell_003" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_004_surface_shell_004" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_005_surface_shell_005" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_006_surface_shell_006" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_007_surface_shell_007" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_008_surface_shell_008" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_009_surface_shell_009" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_010_surface_shell_010" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_011_surface_shell_011" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_012_surface_shell_012" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" quat="1 0 0 0" mesh="part_013_surface_shell_013" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_014_surface_shell_014" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_015_surface_shell_015" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_016_surface_shell_016" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_017_surface_shell_017" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_018_surface_shell_018" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_019_surface_shell_019" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_020_surface_shell_020" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_021_surface_shell_021" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_022_surface_shell_022" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_023_surface_shell_023" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_024_surface_shell_024" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_025_surface_shell_025" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_026_surface_shell_026" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_027_surface_shell_027" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_028_surface_shell_028" class="visual" />
+                    <geom pos="0.0318051 0.07375 0.00435784" quat="1 0 0 0" mesh="part_029_surface_shell_029" class="visual" />
+                    
+                    <geom pos="0.0318051 0.07375 0.00435784" quat="1 0 0 0" mesh="part_001_surface_shell_001" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" quat="1 0 0 0" mesh="part_002_surface_shell_002" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_003_surface_shell_003" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_004_surface_shell_004" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_005_surface_shell_005" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_006_surface_shell_006" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_007_surface_shell_007" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_008_surface_shell_008" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_009_surface_shell_009" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_010_surface_shell_010" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_011_surface_shell_011" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_012_surface_shell_012" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" quat="1 0 0 0" mesh="part_013_surface_shell_013" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_014_surface_shell_014" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_015_surface_shell_015" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_016_surface_shell_016" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_017_surface_shell_017" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_018_surface_shell_018" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_019_surface_shell_019" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_020_surface_shell_020" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_021_surface_shell_021" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_022_surface_shell_022" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_023_surface_shell_023" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_024_surface_shell_024" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_025_surface_shell_025" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_026_surface_shell_026" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_027_surface_shell_027" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" mesh="part_028_surface_shell_028" class="collision" />
+                    <geom pos="0.0318051 0.07375 0.00435784" quat="1 0 0 0" mesh="part_029_surface_shell_029" class="collision" />
+                    
+                    <body name="finger_tip1" pos="-0.0467348 0.203575 -0.00815" quat="0.5 0.5 0.5 0.5">
+                      <inertial pos="-0.051273 0.017364 0.0019493" quat="0.410524 0.658434 0.595117 0.209214" mass="0.0707488" diaginertia="6.74562e-05 5.71499e-05 1.75332e-05" />
+                      <joint name="finger_tip1_joint" pos="0 0 0" axis="0 0 -1" type="slide" range="0 0.04" ref="0.04" actuatorfrcrange="-10 10" damping="0.5" armature="0.01" />
+                      <geom pos="-0.129825 0.0125078 0.07854" quat="0.5 -0.5 -0.5 -0.5" mesh="part_037_solid_037" class="visual" />
+                      <geom pos="-0.129825 0.0125078 0.07854" quat="0.5 -0.5 -0.5 -0.5" mesh="part_036_solid_036" class="visual" />
+                      <geom pos="-0.129825 0.0125078 0.07854" quat="0.5 -0.5 -0.5 -0.5" mesh="part_037_solid_037" class="collision" />
+                      <geom pos="-0.129825 0.0125078 0.07854" quat="0.5 -0.5 -0.5 -0.5" mesh="part_036_solid_036" class="collision" />
+                    </body>
+                    <body name="finger_tip2" pos="0.0332652 0.203575 -0.00815" quat="0.5 -0.5 -0.5 0.5">
+                      <inertial pos="-0.051273 0.00106399 0.0019493" quat="0.410524 0.658434 0.595117 0.209214" mass="0.0707488" diaginertia="6.74562e-05 5.71499e-05 1.75332e-05" />
+                      <joint name="finger_tip2_joint" pos="0 0 0" axis="0 0 -1" type="slide" range="0 0.04" ref="0.04" actuatorfrcrange="-10 10" damping="0.5" armature="0.01" />
+                      <geom pos="-0.129825 -0.0125078 0.00146001" quat="0.5 0.5 0.5 -0.5" mesh="part_039_solid_039" class="visual" />
+                      <geom pos="-0.129825 -0.0125078 0.00146001" quat="0.5 0.5 0.5 -0.5" mesh="part_038_solid_038" class="visual" />
+                      <geom pos="-0.129825 -0.0125078 0.00146001" quat="0.5 0.5 0.5 -0.5" mesh="part_039_solid_039" class="collision" />
+                      <geom pos="-0.129825 -0.0125078 0.00146001" quat="0.5 0.5 0.5 -0.5" mesh="part_038_solid_038" class="collision" />
+                    </body>
+                    <site name="pgia140" pos="0 0 0" size="0.003" rgba="0.2 1 0.2 0.8" group="4" />
+                  </body>
+                  <body name="camera_link" pos="0.0155 -0.0699957 0.03292" quat="0.5 -0.5 -0.5 -0.5">
+                    <inertial pos="0.00287578 0.000617476 0.0141094" quat="0.708581 0.7056 0.00504194 -0.00411309" mass="0.033071" diaginertia="4.44769e-05 4.23388e-05 3.07644e-06" />
+                    <geom pos="-0.011715 -0.0475 -0.014311" quat="1 0 0 0" rgba="0.792157 0.819608 0.933333 1" mesh="base_link" class="visual" />
+                    <geom pos="-0.011715 -0.0475 -0.014311" quat="1 0 0 0" mesh="base_link" class="collision" />
+                    <body name="camera_color_screw_frame" pos="-0.011715 -0.0475 -0.014311">
+                      <inertial pos="-0.000565327 -0.000754795 0.0132965" quat="0.713392 0.700733 0.0043815 -0.00511937" mass="0.00682237" diaginertia="6.29671e-06 5.99127e-06 3.49482e-07" />
+                      <geom rgba="0.792157 0.819608 0.933333 1" mesh="camera_color_screw_frame" class="visual" />
+                      <geom mesh="camera_color_screw_frame" class="collision" />
+                    </body>
+                    <body name="camera_depth_frame">
+                      <inertial pos="-0.00158021 -1.72114e-08 -1.52266e-07" quat="0.5 0.5 0.5 0.5" mass="0.000453168" diaginertia="4.84011e-09 4.84044e-09 4.34107e-09" />
+                      <geom rgba="0.792157 0.819608 0.933333 1" mesh="camera_depth_frame" class="visual" />
+                      <geom mesh="camera_depth_frame" class="collision" />
+                      <body name="camera_IMU_frame" pos="-0.01425 -0.007866 -0.001068">
+                        <inertial pos="-0.000485 0 0" quat="0.707107 0.707107 0 0" mass="1.12186e-05" diaginertia="2.18588e-11 1.3403e-11 1.0215e-11" />
+                      </body>
+                      <body name="camera_left_ir_frame">
+                        <inertial pos="-0.00158021 -1.72114e-08 -1.52266e-07" quat="0.5 0.5 0.5 0.5" mass="0.000453168" diaginertia="4.84011e-09 4.84044e-09 4.34107e-09" />
+                        <body name="camera_left_ir_optical_frame" quat="0.499998 -0.5 0.500002 -0.5">
+                          <inertial pos="1.72114e-08 1.52266e-07 -0.00158021" mass="0.000453168" diaginertia="4.84011e-09 4.84044e-09 4.34107e-09" />
+                        </body>
+                      </body>
+                      <body name="camera_right_ir_frame" pos="0 -0.095 0">
+                        <inertial pos="-0.00158021 -1.72114e-08 -1.52266e-07" quat="0.5 0.5 0.5 0.5" mass="0.000453168" diaginertia="4.84011e-09 4.84044e-09 4.34107e-09" />
+                        <geom rgba="0.792157 0.819608 0.933333 1" mesh="camera_infra2_frame" class="visual" />
+                        <geom mesh="camera_infra2_frame" class="collision" />
+                        <body name="camera_right_ir_optical_frame" quat="0.499998 -0.5 0.500002 -0.5">
+                          <inertial pos="1.72114e-08 1.52266e-07 -0.00158021" mass="0.000453168" diaginertia="4.84011e-09 4.84044e-09 4.34107e-09" />
+                        </body>
+                      </body>
+                      <body name="camera_color_frame" pos="0 -0.02375 0" quat="1 0.00050785 0 0">
+                        <inertial pos="-0.0015802 -2.03381e-08 -1.59581e-07" quat="0.5 0.5 0.5 0.5" mass="0.000453166" diaginertia="4.8401e-09 4.84043e-09 4.34106e-09" />
+                        <body name="camera_color_optical_frame" quat="0.499998 -0.5 0.500002 -0.5">
+                          <inertial pos="2.03381e-08 1.59581e-07 -0.0015802" mass="0.000453166" diaginertia="4.8401e-09 4.84043e-09 4.34106e-09" />
+                          <camera name="gemini336l_color" mode="fixed" pos="0 0 0" xyaxes="-1 0 0 0 1 0" fovy="62" />
+                          <site name="gemini336l_rgb_optical_center" pos="0 0 0" size="0.003" rgba="1 0.2 0.2 0.8" group="4" />
+                        </body>
+                      </body>
+                      <site name="gemini336l_depth_origin" pos="0 0 0" size="0.003" rgba="0.1 0.8 1 0.8" group="4" />
+                    </body>
+                  </body>
+                  <site name="link_06_flange_origin" pos="0 0 0" size="0.003" rgba="1 0.3 0.1 0.8" group="4" />
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <equality>
+    <joint name="finger_mimic" joint1="finger_tip2_joint" joint2="finger_tip1_joint" polycoef="0 1 0 0 0" />
+  </equality>
+  <contact>
+    <exclude body1="finger_tip1" body2="finger_tip2" />
+  </contact>
+  <tendon>
+    <fixed name="finger_split">
+      <joint joint="finger_tip1_joint" coef="0.5" />
+      <joint joint="finger_tip2_joint" coef="0.5" />
+    </fixed>
+  </tendon>
+  <actuator>
+    <motor name="joint_1_torque" joint="joint_1" ctrlrange="-2000 2000" forcerange="-2000 2000" />
+    <motor name="joint_2_torque" joint="joint_2" ctrlrange="-5000 5000" forcerange="-5000 5000" />
+    <motor name="joint_3_torque" joint="joint_3" ctrlrange="-5000 5000" forcerange="-5000 5000" />
+    <motor name="joint_4_torque" joint="joint_4" ctrlrange="-2000 2000" forcerange="-2000 2000" />
+    <motor name="joint_5_torque" joint="joint_5" ctrlrange="-3000 3000" forcerange="-3000 3000" />
+    <motor name="joint_6_torque" joint="joint_6" ctrlrange="-1000 1000" forcerange="-1000 1000" />
+    <motor name="gripper_force" tendon="finger_split" ctrlrange="-20 20" forcerange="-20 20" />
+  </actuator>
+  <sensor>
+    <jointpos name="joint_1_position" joint="joint_1" />
+    <jointvel name="joint_1_velocity" joint="joint_1" />
+    <jointpos name="joint_2_position" joint="joint_2" />
+    <jointvel name="joint_2_velocity" joint="joint_2" />
+    <jointpos name="joint_3_position" joint="joint_3" />
+    <jointvel name="joint_3_velocity" joint="joint_3" />
+    <jointpos name="joint_4_position" joint="joint_4" />
+    <jointvel name="joint_4_velocity" joint="joint_4" />
+    <jointpos name="joint_5_position" joint="joint_5" />
+    <jointvel name="joint_5_velocity" joint="joint_5" />
+    <jointpos name="joint_6_position" joint="joint_6" />
+    <jointvel name="joint_6_velocity" joint="joint_6" />
+    <jointpos name="finger_tip1_joint_position" joint="finger_tip1_joint" />
+    <jointvel name="finger_tip1_joint_velocity" joint="finger_tip1_joint" />
+    <jointpos name="finger_tip2_joint_position" joint="finger_tip2_joint" />
+    <jointvel name="finger_tip2_joint_velocity" joint="finger_tip2_joint" />
+  </sensor>
+  <keyframe>
+    <key name="home" qpos="0 1.57 1.57 0 -1.57 2.36 0 0" ctrl="0 0 0 0 0 0 0" />
+  </keyframe>
+</mujoco>

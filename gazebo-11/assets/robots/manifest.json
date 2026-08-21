@@ -1,0 +1,7 @@
+{
+  "schema_version": "robosim.robot-assets/1",
+  "robots": [
+    {"robot_id": "franka_panda", "directory": "franka_panda"},
+    {"robot_id": "ipads_desc", "directory": "ipads"}
+  ]
+}

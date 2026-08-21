@@ -1,0 +1,17 @@
+{
+  "schema_version": "robosim.robot-assets/1",
+  "robots": [
+    {
+      "robot_id": "franka_panda",
+      "directory": "franka_panda",
+      "mjcf": "panda.xml",
+      "srdf": "panda.srdf"
+    },
+    {
+      "robot_id": "jaka_s5",
+      "directory": "jaka_s5",
+      "mjcf": "jaka_s5.xml",
+      "srdf": "jaka_s5.srdf"
+    }
+  ]
+}

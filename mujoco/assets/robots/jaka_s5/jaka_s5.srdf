@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="jaka_s5">
+  <!-- The JAKA arm group, zero/pose_1 states, and arm self-collision pairs
+       follow JAKARobotics/jaka_ros2:
+       src/jaka_s5_moveit_config/config/jaka_s5.srdf. The gripper and camera
+       semantics below are assembly-specific extensions. -->
+  <!-- Link_06 is the last verified arm frame. A grasp TCP must be added only
+       after its physical offset from the gripper mounting datum is measured. -->
+  <group name="jaka_s5_arm">
+    <chain base_link="Link_00" tip_link="Link_06"/>
+  </group>
+
+  <group name="pgia140_gripper">
+    <joint name="finger_tip1_joint"/>
+  </group>
+
+  <group name="manipulator">
+    <group name="jaka_s5_arm"/>
+    <group name="pgia140_gripper"/>
+  </group>
+
+  <group_state name="zero" group="jaka_s5_arm">
+    <joint name="joint_1" value="0"/>
+    <joint name="joint_2" value="0"/>
+    <joint name="joint_3" value="0"/>
+    <joint name="joint_4" value="0"/>
+    <joint name="joint_5" value="0"/>
+    <joint name="joint_6" value="0"/>
+  </group_state>
+  <!-- robosim prefers a state named home/ready/default at initialization. -->
+  <group_state name="home" group="jaka_s5_arm">
+    <joint name="joint_1" value="0.000"/>
+    <joint name="joint_2" value="1.570"/>
+    <joint name="joint_3" value="1.570"/>
+    <joint name="joint_4" value="0.000"/>
+    <joint name="joint_5" value="-1.570"/>
+    <joint name="joint_6" value="2.360"/>
+  </group_state>
+  <group_state name="pose_1" group="jaka_s5_arm">
+    <joint name="joint_1" value="0"/>
+    <joint name="joint_2" value="1.5707"/>
+    <joint name="joint_3" value="-1.5707"/>
+    <joint name="joint_4" value="1.5707"/>
+    <joint name="joint_5" value="1.5707"/>
+    <joint name="joint_6" value="0"/>
+  </group_state>
+  <group_state name="open" group="pgia140_gripper">
+    <joint name="finger_tip1_joint" value="0.04"/>
+  </group_state>
+  <group_state name="closed" group="pgia140_gripper">
+    <joint name="finger_tip1_joint" value="0"/>
+  </group_state>
+
+  <!-- The MuJoCo asset contains a site named pgia140 at gripper_base origin.
+       It is an explicit control frame, not yet a measured grasp TCP. -->
+  <end_effector name="pgia140" parent_link="Link_06" group="pgia140_gripper" parent_group="jaka_s5_arm"/>
+
+  <!-- JAKA upstream self-collision matrix. -->
+  <disable_collisions link1="Link_00" link2="Link_01" reason="Adjacent"/>
+  <disable_collisions link1="Link_01" link2="Link_02" reason="Adjacent"/>
+  <disable_collisions link1="Link_01" link2="Link_04" reason="Never"/>
+  <disable_collisions link1="Link_02" link2="Link_03" reason="Adjacent"/>
+  <disable_collisions link1="Link_03" link2="Link_04" reason="Adjacent"/>
+  <disable_collisions link1="Link_03" link2="Link_05" reason="Never"/>
+  <disable_collisions link1="Link_04" link2="Link_05" reason="Adjacent"/>
+  <disable_collisions link1="Link_04" link2="Link_06" reason="Never"/>
+  <disable_collisions link1="Link_05" link2="Link_06" reason="Adjacent"/>
+
+  <!-- Directly connected assembly links. -->
+  <disable_collisions link1="Link_06" link2="gripper_base" reason="Adjacent"/>
+  <disable_collisions link1="gripper_base" link2="finger_tip1" reason="Adjacent"/>
+  <disable_collisions link1="gripper_base" link2="finger_tip2" reason="Adjacent"/>
+  <disable_collisions link1="finger_tip1" link2="finger_tip2" reason="ParallelGripper"/>
+  <disable_collisions link1="Link_06" link2="camera_link" reason="Adjacent"/>
+  <disable_collisions link1="camera_link" link2="camera_color_screw_frame" reason="Adjacent"/>
+  <disable_collisions link1="camera_link" link2="camera_depth_frame" reason="Adjacent"/>
+  <disable_collisions link1="camera_depth_frame" link2="camera_IMU_frame" reason="Adjacent"/>
+  <disable_collisions link1="camera_depth_frame" link2="camera_left_ir_frame" reason="Adjacent"/>
+  <disable_collisions link1="camera_left_ir_frame" link2="camera_left_ir_optical_frame" reason="Adjacent"/>
+  <disable_collisions link1="camera_depth_frame" link2="camera_right_ir_frame" reason="Adjacent"/>
+  <disable_collisions link1="camera_right_ir_frame" link2="camera_right_ir_optical_frame" reason="Adjacent"/>
+  <disable_collisions link1="camera_depth_frame" link2="camera_color_frame" reason="Adjacent"/>
+  <disable_collisions link1="camera_color_frame" link2="camera_color_optical_frame" reason="Adjacent"/>
+</robot>
