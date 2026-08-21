@@ -6,6 +6,16 @@
     "srdf": "panda_moveit_config/config/panda.srdf",
     "closure_roots": ["panda_description", "panda_moveit_config"],
     "package_aliases": {"meshes": "panda_description/meshes"},
+    "cameras": [
+      {
+        "name": "wrist_view",
+        "link": "panda_hand",
+        "pose": [0.04, 0.0, 0.06, 0.0, -1.5707963267948966, 0.0],
+        "fovy": 60.0,
+        "width": 512,
+        "height": 512
+      }
+    ],
     "position_controllers": [
       {"group": "panda_arm", "controller": "panda_arm_controller"},
       {"group": "hand", "controller": "hand_controller"}
